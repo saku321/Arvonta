@@ -3,10 +3,10 @@
 body {
     text-align: center;
     background-color: #121212 !important;
-  
+    overflow:hidden;
 }
 
-
+/*osallistumis boxi*/
 #centerDiv {
     margin: auto;
     display: block;
@@ -17,7 +17,7 @@ body {
 }
 #centerDiv h1 {
     color: rgb(41,201,105, 0.7);
-    font-size: 7vh;
+    font-size: 4vh;
 }
 #centerDiv h2 {
     color: rgb(255, 255, 255,0.9);
@@ -30,34 +30,47 @@ body {
     margin-top:30px;
 }
 #centerDiv Button {
-    color: rgb(0, 0, 0,0.8);
+    color: rgb(0,0,0,0.8);
     margin: auto;
+    width:20%;
     margin-bottom: 3vh;
 }
-#playerList{
-    width:30%;
-    height:300px;
-    margin:auto;
-   
+/*osallistujat osio*/
+#playerList {
+    text-align: center;
+    width: 15%;
+    height:96vh;
+    float: right;
+    background-color: #212529;
+    border-bottom-left-radius:8px;
 }
 #playerList p {
     color: rgb(255, 255, 255,0.9);
-    font-size: 3vh;
+    font-size: 4vh;
 
 }
 #playerList ul {
     display:flex;
+    float:left;
     flex-wrap:wrap;
     flex-direction:column;
-    margin-left:-20px;
+    width:100%;
 }
 
 #playerList ul li{
     margin:auto;
-    margin-top:20px;
-    
+    font-size:22px;
     color: rgb(255, 255, 255,0.9);
 }
+/*Menu */
+
+.container{
+    margin-left:50px !important;
+}
+
+
+
+
 @media only screen and (max-width: 600px) {
 
 

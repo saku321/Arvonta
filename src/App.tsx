@@ -5,6 +5,9 @@ import Alert from 'react-bootstrap/Alert';
 import { io } from "socket.io-client";
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 const socket = io("http://localhost:3002");
 function App() {
 
@@ -41,12 +44,34 @@ function App() {
     
   return (
       <div className="App">
+          <div id="menuDiv">
+              <Navbar bg="dark" variant="dark">
+                  <Container>
+                  <Navbar.Brand href="#home">Koti</Navbar.Brand>
+                  <Nav className="me-auto">
+                      <Nav.Link href="#home">Portfolio</Nav.Link>
+                      <Nav.Link href="https://github.com/saku321/Arvonta" target="_blank">Github</Nav.Link>
+                      </Nav>
+                  </Container>
+      </Navbar>
+        </div>
           {alertStatus && (
-              <Alert variant="primary" style={{ textAlign: "center", fontSize: "25px" }}>Arvonnan voittaja: {winnerTxt}</Alert>
+              <Alert variant="primary" style={{ textAlign: "center", fontSize: "25px", position: "fixed", width: "100%" }}>Arvonnan voittaja: {winnerTxt}</Alert>
           )}
+
+          <div id="playerList">
+              <p>Osallistujat</p>
+              <ul>
+
+                  {players.map((player,index) =>
+                      <li key={index}>{player} </li>
+                  )}
+              </ul>
+
+          </div>
           <div id="centerDiv">
 
-              <h1>Arvonta</h1>
+              <h1>Osallistu arvontaan</h1>
               <h2>{timer}</h2>
               <InputGroup className="mb-3">
                   <InputGroup.Text id="inputGroup-sizing-default">
@@ -61,18 +86,9 @@ function App() {
              <br></br>
               <Button variant="success" id="joinBtn" onClick={joinGame}>Osallistu arvontaan</Button>
               
-              <div id="playerList">
-                  <p>Osallistujat</p>
-                  <ul>
-
-                  {players.map((player) =>
-                      <li>{player} </li> 
-                  ) }
-                  </ul>
-
-              </div>
+            
             </div>
-
+        
 
     </div>
   );
