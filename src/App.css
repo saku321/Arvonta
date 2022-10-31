@@ -70,12 +70,26 @@ body {
 
 
 
+#alertMsg {
+    text-align:center;
+    font-size:25px;
+    position:fixed;
+    width:100%;
 
+
+}
 @media only screen and (max-width: 600px) {
-
-
     #playerList {
-        transform: translate(-35%,0%);
+        width:100%;
+        height:20vh;
+        overflow:scroll;
     }
 
+   
+    #centerDiv Button{
+        width:50%;
+    }
+    #alertMsg{
+        margin-top:20vh;
+    }
 }

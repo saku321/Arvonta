@@ -56,7 +56,7 @@ function App() {
       </Navbar>
         </div>
           {alertStatus && (
-              <Alert variant="primary" style={{ textAlign: "center", fontSize: "25px", position: "fixed", width: "100%" }}>Arvonnan voittaja: {winnerTxt}</Alert>
+              <Alert id="alertMsg" variant="primary" >Arvonnan voittaja: {winnerTxt}</Alert>
           )}
 
           <div id="playerList">
